@@ -1,0 +1,82 @@
+.rating-card {
+  border: 2px solid var(--light-greyish);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 265px;
+  max-width: 350px;
+  background: rgba(71, 71, 71, 0.06);
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rc-user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 50px;
+}
+
+.rc-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.rc-username {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.rc-stars {
+  display: flex;
+}
+
+.star {
+  color: lightgray;
+  font-size: 1em;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: var(--orangish);
+}
+
+.rc-time {
+  color: gray;
+  font-size: 0.8em;
+}
+
+.rc-review {
+  margin-top: 10px;
+  font-size: 1em;
+  color: black;
+
+  word-wrap: break-word; /* Ensures long words break properly */
+  overflow-wrap: break-word; /* Alternative for word-wrap */
+  white-space: normal; /* Ensures text wraps to the next line */
+  max-width: 220px; /* Prevents text from exceeding the card */
+
+  height: 150px;
+  overflow-y: auto; /* Enables vertical scrolling */
+  display: block; /* Ensures it's treated as a block element */
+
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.rc-review::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari */
+}

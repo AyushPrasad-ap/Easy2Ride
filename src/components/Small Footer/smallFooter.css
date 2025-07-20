@@ -1,0 +1,28 @@
+.footer .sf-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0px;
+}
+
+.footer .sf-container .group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .sf-uptop {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sf-copyright-mark {
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}

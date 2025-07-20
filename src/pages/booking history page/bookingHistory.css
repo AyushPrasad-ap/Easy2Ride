@@ -1,0 +1,178 @@
+.bh-body {
+  /*background-color: #ff6161c6; this was just added to aid in positioning (it has no other significance at all)*/
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+}
+
+.bh-footer {
+  margin-top: 10px;
+}
+
+.active-btn {
+  background-color: #434343;
+  color: white;
+}
+
+.bh-filter-btns {
+  /*background-color: #8dff8db5; this was just added to aid in positioning (it has no other significance at all)*/
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.bh-header {
+  background-color: #ebebebcc;
+  padding: 20px 30px;
+}
+.bh-header-content {
+  /*background-color: #ffe08385; this was just added to aid in positioning (it has no other significance at all)*/
+  position: relative;
+  margin-left: 20px;
+
+  p {
+    /* font-size: 0.8em; */
+    font-weight: bold;
+    color: var(--greyish, #434343);
+  }
+
+  .bh-back-btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transform: rotateZ(180deg);
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+    top: 10px;
+    left: -40px;
+  }
+}
+
+.bh-section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  color: #434343;
+  margin-bottom: 20px;
+  /*background-color: #ffe08385; this was just added to aid in positioning (it has no other significance at all)*/
+}
+
+.bh-section-divider::before,
+.bh-section-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px; /* Thickness of the line */
+  background: repeating-linear-gradient(
+    to right,
+    #434343,
+    #434343 10px,
+    /* Dash length */ transparent 10px,
+    /* Dash spacing */ transparent 15px /* Space between dashes */
+  );
+  margin: 0 15px; /* Space around the text */
+}
+
+/* this piece of code is used to style the ongoing bookings to wrap according to the availabe width */
+.bh-bookings-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  /*background-color: #ff54adc3; this was just added to aid in positioning (it has no other significance at all)*/
+  margin-bottom: 80px;
+}
+
+.bh-bookings-container .no-bookings {
+  width: 100%;
+  text-align: center;
+  font-size: 1.75em;
+  color: var(--light-greyish, #434343);
+}
+
+/* css for popups */
+
+.bh-popup-container {
+  width: 85%;
+  max-width: 365px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  padding: 25px;
+  font-weight: 500;
+  background-color: white;
+  position: relative;
+
+  hr {
+    height: 1px;
+    border: none;
+    background-color: var(--light-greyish);
+    margin: 15px 0;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  .cancelled-img {
+    position: absolute;
+    transform: translate(-50%, -50%) rotateZ(15deg);
+    top: 50%;
+    left: 50%;
+
+    width: 90%;
+    opacity: 10%;
+  }
+}
+
+.popup-time-details {
+  width: 100%;
+  justify-content: space-between;
+
+  span {
+    color: #434343;
+  }
+  .align-right {
+    text-align: right;
+  }
+
+  #vname {
+    font-size: 1.2em;
+  }
+}
+
+.popup-field {
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.popup-close-btn {
+  position: absolute;
+
+  right: 20px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

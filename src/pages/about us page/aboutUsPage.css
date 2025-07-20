@@ -1,0 +1,61 @@
+.aboutUs-page-body {
+  /* background-color: rgba(255, 0, 0, 0.4);   this was just added to aid in positioning (it has no other significance at all) */
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+}
+
+.aboutUs-top-section {
+  justify-content: space-between;
+
+  .margin-right-10 {
+    margin-right: 10px;
+  }
+}
+
+.aboutUs-content {
+  /* background-color: rgba(0, 0, 250, 0.4); this was just added to aid in positioning (it has no other significance at all) */
+  padding: 50px 0;
+  color: var(--greyish);
+
+  h2 {
+    color: rgb(61, 61, 61);
+    margin-bottom: 20px;
+  }
+
+  .aboutUs-info-section {
+    margin-bottom: 40px;
+
+    li {
+      margin-bottom: 15px;
+    }
+    /* background-color: rgba(0, 255, 255, 0.425); this was just added to aid in positioning (it has no other significance at all) */
+  }
+  .no-margin {
+    margin: 0;
+  }
+  .padding-left-20 {
+    padding: 0 0 0 20px;
+  }
+}
+
+.custom-tick {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    position: relative;
+    padding-left: 30px; /* Space for the tick */
+  }
+  li::before {
+    content: "✔️"; /* Or any other Unicode character */
+    position: absolute;
+    left: 0;
+  }
+}
+
+.aboutUs-footer {
+  width: 100%;
+  margin-top: 20px;
+}

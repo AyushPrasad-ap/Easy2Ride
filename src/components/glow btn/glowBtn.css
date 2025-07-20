@@ -1,0 +1,37 @@
+.glow-btn {
+  border: none;
+  font-family: Afacad;
+  color: white;
+  letter-spacing: 1px;
+  padding: 5px 20px;
+  /* border-radius: 15px;   I have added this using prop (default value) */
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.glow-btn-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--load-color, #fff);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

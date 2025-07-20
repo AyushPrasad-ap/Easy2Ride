@@ -1,0 +1,215 @@
+.profile-page-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-page-content {
+  box-sizing: border-box;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.card-container {
+  background-color: white;
+  box-sizing: border-box;
+  width: 90%;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  h2 {
+    margin-bottom: 20px;
+    color: #474747;
+  }
+
+  h6 {
+    color: rgba(67, 67, 67, 0.5);
+  }
+
+  input,
+  p {
+    margin-bottom: 15px;
+    font-family: "Afacad";
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+
+  .card-container-content {
+    padding: 0 10px;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.tdc-labels {
+  margin-bottom: 15px;
+  font-family: "Afacad";
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.doc-preview {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.hide-calendar-icon {
+  position: relative;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  cursor: text; /* Keeps it looking like a normal input */
+}
+
+/* Hides the dropdown arrow (for some browsers) */
+.hide-calendar-icon::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+  font-family: "Afacad", sans-serif;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-pg-logout-btn {
+  width: 90%;
+  height: 45px;
+  border: none;
+  outline: none;
+  font-family: "Afacad", sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+.profile-pg-logout-btn:hover {
+  letter-spacing: 5px;
+}
+
+.profile-page-footer {
+  margin-top: 100px;
+}
+
+.profile-page-header {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+.profile-bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-bar {
+  position: absolute;
+  bottom: 10px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 100%;
+  max-width: 310px;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
+
+.relative-container {
+  position: relative;
+
+  .profile-user-icon {
+    position: absolute;
+    top: -39px;
+    left: 52px;
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  h2 {
+    color: #282828;
+    position: absolute;
+    top: -39px;
+    left: 145px;
+    font-size: 2em;
+    width: 160px;
+    text-align: center;
+  }
+  p {
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 145px;
+    font-size: 1em;
+    font-weight: bold;
+    width: 160px;
+    text-align: center;
+  }
+}
+
+.profile-home-btn {
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  padding: 5px;
+
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  backdrop-filter: blur(7px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}

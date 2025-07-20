@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Afacad:ital,wght@0,400..700;1,400..700&display=swap");
+
+#root {
+  max-width: 768px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+body {
+  font-family: "Afacad", sans-serif; /* Default global font */
+
+  background-image: url("/images/bg_poster.jpg");
+  background-repeat: repeat; /* tile it in both directions */
+  background-size: 350px; /* or set a fixed size if you like: e.g. 200px */
+  background-position: top left; /* where the tiling starts */
+}
+
+:root {
+  --greyish: #434343;
+  --light-greyish: rgba(67, 67, 67, 0.35);
+  --bluish: #0c89e4;
+  --orangish: #ff585e;
+  --redish: #ff4c4c;
+  --greenish: #05c17d;
+}
+
+/* GLOBAL STYLES 👇🏻*/
+* {
+  letter-spacing: 0.75px;
+
+  /*For smoothening the font*/
+  -webkit-font-smoothing: antialiased; /* For Chrome/Safari */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox */
+  text-rendering: optimizeLegibility; /* Overall better legibility */
+}
+
+.placeCenter-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.placeCenter-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxShadowStyle {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.g-all-caps {
+  text-transform: uppercase;
+}
+
+/* GLOBAL STYLES 👆🏻*/

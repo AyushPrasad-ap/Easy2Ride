@@ -1,0 +1,59 @@
+.pbc-container {
+  padding: 15px;
+  border: 2px solid var(--greyish, #434343);
+  border-radius: 10px;
+  gap: 15px;
+  height: 110px;
+  font-size: 1em;
+  background-color: #ebebeb5e;
+}
+
+.pbc-container .pbc-section-one,
+.pbc-section-two {
+  height: inherit;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.pbc-container .pbc-section-one {
+  img {
+    border-radius: 10px;
+  }
+}
+
+.pbc-container .pbc-section-two {
+  width: 200px;
+  font-weight: bold;
+
+  .pbc-time-details,
+  .pbc-name-details {
+    width: inherit;
+    justify-content: space-between;
+
+    span {
+      color: #434343;
+    }
+    #vname {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.pbc-status {
+  color: #434343;
+  font-size: 0.75em;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-top: 15px;
+
+  p {
+    letter-spacing: 1;
+  }
+}
+
+#completed {
+  background-color: #cbffe4;
+}
+#cancelled {
+  background-color: #ffbbba;
+}

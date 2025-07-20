@@ -1,0 +1,115 @@
+.menu {
+  width: 30px;
+  padding: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.menu-icon {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+.menu-icon-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*  */
+
+.menu-container .top-section .user-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.menu-container .top-section .username {
+  color: black;
+  font-size: 1.3em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+}
+.menu-container .top-section .close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-container .top-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-container ul {
+  padding: 0;
+}
+.menu-container ul li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.menu-container ul li a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 5px;
+  transition: all 0.3s;
+}
+
+.menu-container .middle-section {
+  margin: 10px 0;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.menu-container .middle-section li a {
+  color: var(--greyish);
+  cursor: pointer;
+}
+.menu-container .middle-section li a:hover {
+  font-weight: bold;
+  color: black;
+}
+.menu-container .bottom-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.menu-container {
+  z-index: 1;
+  width: 240px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-container.active-menu {
+  opacity: 1;
+  visibility: visible;
+
+  z-index: 1;
+  right: 10px;
+  top: 0px;
+}
