@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./CPD.css";
 
 // importing images
-import dropIcon from "../../images/interface icons/arrow icon.svg";
+import dropIcon from "/images/interface icons/arrow icon.svg";
 
 function CPD({ className = "" }) {
     const [isOpen, setIsOpen] = useState(false);

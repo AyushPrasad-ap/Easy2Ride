@@ -61,10 +61,6 @@ function App() {
 
 
 
-
-
-
-
       {/* when deploying this project : remove scripts folder (serviceAccountKey.json file has sensitive info) */}
       <Routes>
         <Route path='/' element={<LandingPage />} />

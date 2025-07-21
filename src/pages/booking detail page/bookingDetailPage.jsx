@@ -13,7 +13,7 @@ import "../../Animated Loaders/ThreeDotLoader.css";
 
 
 // importing images
-import locationIcon from "../../images/icons/location_icon.png";
+import locationIcon from "/images/icons/location_icon.png";
 import arrowIcon from "/images/interface icons/arrow icon.svg";
 import closeIcon from "/images/interface icons/close icon.svg";
 import shareIcon from "/images/interface icons/share icon.svg";

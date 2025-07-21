@@ -7,8 +7,8 @@ import { useAreaSelected } from '../../context/AreaSelected';
 
 
 // importing images 
-import menuIcon from "../../images/interface icons/hamburger icon.svg";
-import closeIcon from "../../images/interface icons/close icon.svg";
+import menuIcon from "/images/interface icons/hamburger icon.svg";
+import closeIcon from "/images/interface icons/close icon.svg";
 
 
 function Menu() {

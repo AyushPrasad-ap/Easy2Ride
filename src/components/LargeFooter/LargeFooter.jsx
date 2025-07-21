@@ -1,11 +1,11 @@
 import "./LargeFooter.css";
 
 // importing images
-import upArrow from "../../images/arrow_logo.svg";
-import twitterSymbol from "../../images/company icons/twitter_symbol.png";
-import linkedinSymbol from "../../images/company icons/linkedin_symbol.png";
-import facebookSymbol from "../../images/company icons/facebook_symbol.png";
-import instagramSymbol from "../../images/company icons/instagram_symbol.png";
+import upArrow from "/images/arrow_logo.svg";
+import twitterSymbol from "/images/company icons/twitter_symbol.png";
+import linkedinSymbol from "/images/company icons/linkedin_symbol.png";
+import facebookSymbol from "/images/company icons/facebook_symbol.png";
+import instagramSymbol from "/images/company icons/instagram_symbol.png";
 
 function LargeFooter() {
 
