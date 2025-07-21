@@ -1,5 +1,7 @@
 **THIS TEXT DOCUMENT DISPLAY INFORMATION ABOUT THE STATE OF THIS PROJECT**
 
--I have copied the images folder inside the public folder, THIS WAS EXTREMELY IMPORTANT {always keep the images in the public folder only}
+-The site is now live
 
-
+-2 css changes needed:
+--->product detail page : input box css issue (mobile device only)
+--->signup page : css issue (mobile device only)
