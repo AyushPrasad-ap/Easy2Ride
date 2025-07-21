@@ -38,6 +38,7 @@ const app = express();
 const router = express.Router();
 
 // Middleware
+app.use('/api/create-order', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -74,30 +75,36 @@ router.get('/health', (req, res) => {
 
 // Create Order API
 router.post('/create-order', async (req, res) => {
-
-  console.log('create-order payload:', req.body);
-
-  let { amount, currency = 'INR', receipt } = req.body;
-
-  amount = Number(amount);
-  if (!amount || isNaN(amount) || amount < 1) {
-    return res
-      .status(400)
-      .json({ success: false, error: 'Valid numeric amount (≥ 1) is required' });
-  }
-
+  let requestBody;
   try {
-    const { amount, currency = 'INR', receipt } = req.body;
-    
+    // Handle Buffer
+    if (Buffer.isBuffer(req.body)) {
+      requestBody = JSON.parse(req.body.toString('utf8'));
+    } else if (typeof req.body === 'string') {
+      requestBody = JSON.parse(req.body);
+    } else {
+      requestBody = req.body; // Already parsed (local/dev)
+    }
+
+    console.log('Parsed request body:', requestBody);
+
+    let { amount, currency = 'INR', receipt } = requestBody;
+    amount = Number(amount);
+
+    if (!amount || isNaN(amount) || amount < 1) {
+      return res
+        .status(400)
+        .json({ success: false, error: 'Valid numeric amount (≥ 1) is required' });
+    }
+
     const options = {
-      amount: amount * 100, // Amount in paise
+      amount: amount * 100,
       currency,
       receipt,
-      payment_capture: 1 // Auto capture
+      payment_capture: 1
     };
 
     const order = await razorpay.orders.create(options);
-
     res.json({
       success: true,
       order_id: order.id,
@@ -106,12 +113,10 @@ router.post('/create-order', async (req, res) => {
     });
   } catch (error) {
     console.error('Error creating order:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to create order'
-    });
+    res.status(500).json({ success: false, error: 'Failed to create order' });
   }
 });
+
 
 // Verify Payment API
 router.post('/verify-payment', (req, res) => {
