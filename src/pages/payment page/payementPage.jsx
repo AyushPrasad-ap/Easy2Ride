@@ -92,7 +92,7 @@ function PaymentPage() {
     const createOrder = async (amount) => {
         try {
             const orderPayload = {
-                amount: Number(subTotal),       // make sure it is a number
+                amount: Number(amount),       // make sure it is a number
                 currency: 'INR',
                 receipt: `receipt_${Date.now()}`
             };
@@ -225,7 +225,7 @@ function PaymentPage() {
             setLoading(true);
 
             // Create order on backend[3][12]
-            const orderData = await createOrder(subTotal);
+            const orderData = await createOrder(Number(subTotal));
 
             if (!orderData.success) {
                 throw new Error('Failed to create order');
