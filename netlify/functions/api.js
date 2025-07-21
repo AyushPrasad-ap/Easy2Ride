@@ -77,6 +77,12 @@ router.get('/health', (req, res) => {
 
 // Create Order API
 router.post('/create-order', async (req, res) => {
+
+  const { amount } = req.body;
+  if (!amount) {
+    return res.status(400).json({ success: false, error: 'Amount is requiredddd' });
+  }
+
   try {
     const { amount, currency = 'INR', receipt } = req.body;
     
