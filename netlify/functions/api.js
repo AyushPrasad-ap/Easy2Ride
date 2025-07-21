@@ -132,6 +132,9 @@ router.post('/verify-payment', (req, res) => {
 
     const isAuthentic = expectedSignature === razorpay_signature;
 
+    //
+    console.log(req.body, expectedSignature, isAuthentic)
+
     if (isAuthentic) {
       res.json({
         success: true,
