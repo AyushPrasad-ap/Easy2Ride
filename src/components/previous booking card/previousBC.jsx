@@ -1,4 +1,4 @@
-import "./previousBC.CSS"
+import "./previousBC.css"
 
 // this functions simply formats the firestore timestamp to a more readable format
 const formatFirestoreTimestamp = (timestamp) => {
