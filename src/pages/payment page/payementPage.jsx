@@ -91,16 +91,18 @@ function PaymentPage() {
     // Create Order function
     const createOrder = async (amount) => {
         try {
+            const orderPayload = {
+                amount: Number(subTotal),       // make sure it is a number
+                currency: 'INR',
+                receipt: `receipt_${Date.now()}`
+            };
+
             const response = await fetch('/api/create-order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    amount: amount,
-                    currency: 'INR',
-                    receipt: `receipt_${Date.now()}`
-                }),
+                body: JSON.stringify(orderPayload),
             });
 
             if (!response.ok) {

@@ -75,9 +75,13 @@ router.get('/health', (req, res) => {
 // Create Order API
 router.post('/create-order', async (req, res) => {
 
-  const { amount } = req.body;
-  if (!amount) {
-    return res.status(400).json({ success: false, error: 'Amount is requiredddd' });
+  let { amount, currency = 'INR', receipt } = req.body;
+
+  amount = Number(amount);
+  if (!amount || isNaN(amount) || amount < 1) {
+    return res
+      .status(400)
+      .json({ success: false, error: 'Valid numeric amount (≥ 1) is required' });
   }
 
   try {
