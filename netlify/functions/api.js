@@ -8,8 +8,8 @@ const crypto = require('crypto');
 // Initialize Firebase Admin (only once)
 if (!admin.apps.length) {
   try {
-    // For production, use environment variables
-    if (process.env.FIREBASE_PRIVATE_KEY) {
+    // Always use environment variables in production
+    if (process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_CLIENT_EMAIL) {
       admin.initializeApp({
         credential: admin.credential.cert({
           projectId: process.env.FIREBASE_PROJECT_ID,
@@ -19,17 +19,14 @@ if (!admin.apps.length) {
         databaseURL: process.env.FIREBASE_DATABASE_URL
       });
     } else {
-      // For development, use service account key
-      const serviceAccount = require('../../scripts/serviceAccountKey.json');
-      admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://easy-2-ride-default-rtdb.firebaseio.com/"
-      });
+      console.error('Missing Firebase environment variables');
+      throw new Error('Firebase credentials not configured properly');
     }
   } catch (error) {
     console.error('Firebase initialization error:', error);
   }
 }
+
 
 // Initialize Razorpay
 const razorpay = new Razorpay({
