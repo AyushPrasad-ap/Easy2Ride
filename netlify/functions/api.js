@@ -75,6 +75,8 @@ router.get('/health', (req, res) => {
 // Create Order API
 router.post('/create-order', async (req, res) => {
 
+  console.log('create-order payload:', req.body);
+
   let { amount, currency = 'INR', receipt } = req.body;
 
   amount = Number(amount);

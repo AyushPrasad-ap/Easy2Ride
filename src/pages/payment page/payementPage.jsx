@@ -106,12 +106,12 @@ function PaymentPage() {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to create order');
+                throw new Error('💀Failed to create order');
             }
 
             return await response.json();
         } catch (error) {
-            console.error('Error creating order:', error);
+            console.error('💀Error creating order:', error);
             throw error;
         }
     };
