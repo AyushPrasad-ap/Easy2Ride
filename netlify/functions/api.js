@@ -73,9 +73,9 @@ router.get('/health', (req, res) => {
 // ===== YOUR ORIGINAL PAYMENT ROUTES FROM server.cjs =====
 
 // Create Order API
-router.post('/create-order', async (req, res) => {
+console.log('create-order payload:', req.body);
 
-  console.log('create-order payload:', req.body);
+router.post('/create-order', async (req, res) => {
 
   let { amount, currency = 'INR', receipt } = req.body;
 
