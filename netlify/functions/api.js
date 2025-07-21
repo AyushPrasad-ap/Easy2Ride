@@ -39,6 +39,7 @@ const router = express.Router();
 
 // Middleware
 app.use('/api/create-order', express.raw({ type: 'application/json' }));
+app.use('/api/verify-payment', express.raw({ type: 'application/json' }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
@@ -119,41 +120,39 @@ router.post('/create-order', async (req, res) => {
 
 
 // Verify Payment API
-router.post('/verify-payment', (req, res) => {
+router.post('/verify-payment', async (req, res) => {
+  let payload;
   try {
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
-    
-    const body = razorpay_order_id + "|" + razorpay_payment_id;
-    
-    const expectedSignature = crypto
-      .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET || 'YOUR_RAZORPAY_KEY_SECRET')
-      .update(body.toString())
-      .digest('hex');
-
-    const isAuthentic = expectedSignature === razorpay_signature;
-
-    //
-    console.log(req.body, expectedSignature, isAuthentic)
-
-    if (isAuthentic) {
-      res.json({
-        success: true,
-        message: 'Payment verified successfully'
-      });
+    // parse raw Buffer or string into object
+    if (Buffer.isBuffer(req.body)) {
+      payload = JSON.parse(req.body.toString('utf8'));
+    } else if (typeof req.body === 'string') {
+      payload = JSON.parse(req.body);
     } else {
-      res.status(400).json({
-        success: false,
-        message: 'Payment verification failed'
-      });
+      payload = req.body;
     }
-  } catch (error) {
-    console.error('Error verifying payment:', error);
-    res.status(500).json({
-      success: false,
-      error: 'Failed to verify payment'
-    });
+  } catch (err) {
+    console.error('Error parsing verify-payment body:', err);
+    return res.status(400).json({ success: false, message: 'Invalid JSON' });
+  }
+
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = payload;
+  console.log('verify-payment payload:', payload);
+
+  const signed = razorpay_order_id + '|' + razorpay_payment_id;
+  const expected = crypto
+    .createHmac('sha256', process.env.RAZORPAY_KEY_SECRET)
+    .update(signed)
+    .digest('hex');
+
+  if (expected === razorpay_signature) {
+    return res.json({ success: true, message: 'Payment verified successfully' });
+  } else {
+    console.warn('Signature mismatch:', { expected, got: razorpay_signature });
+    return res.status(400).json({ success: false, message: 'Payment verification failed' });
   }
 });
+
 
 
 
