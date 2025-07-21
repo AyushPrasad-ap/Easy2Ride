@@ -62,9 +62,14 @@ router.get('/health', (req, res) => {
   res.json({ 
     status: 'API is working',
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || 'development'
+    environment: process.env.NODE_ENV || 'development',
+    razorpayConfigured: {
+      hasKeyId: !!process.env.RAZORPAY_KEY_ID,
+      hasKeySecret: !!process.env.RAZORPAY_KEY_SECRET
+    }
   });
 });
+
 
 
 
