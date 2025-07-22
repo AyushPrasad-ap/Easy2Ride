@@ -268,6 +268,7 @@ function ProductDetailPage() {
     const vehicleName = selectedVehicle.name;
     const vehicleRating = selectedVehicle.rating;
     const vehicleReview = selectedVehicle.reviews;
+    const baseAmt = selectedVehicle.baseAmt;
     const vehicleRate = selectedVehicle.rate;
     const owner = selectedVehicle.owner;
     const vehicleImage = selectedVehicle.image;
@@ -415,7 +416,7 @@ function ProductDetailPage() {
                     <div className="pdp-inputs">
                         <InputBox
                             width={"100%"}
-                            style={{ maxWidth: "300px" }}
+                            // style={{ maxWidth: "300px" }}
                             typeName="date"
                             labelName="Date"
                             value={date}
@@ -424,7 +425,7 @@ function ProductDetailPage() {
                         />
                         <InputBox
                             width={"100%"}
-                            style={{ maxWidth: "300px" }}
+                            // style={{ maxWidth: "300px" }}
                             typeName="number"
                             labelName="Quantity"
                             value={quantity}
@@ -432,7 +433,7 @@ function ProductDetailPage() {
                         />
                         <InputBox
                             width={"100%"}
-                            style={{ maxWidth: "300px" }}
+                            // style={{ maxWidth: "300px" }}
                             typeName="time"
                             labelName="From"
                             value={fromTime}
@@ -440,7 +441,7 @@ function ProductDetailPage() {
                         />
                         <InputBox
                             width={"100%"}
-                            style={{ maxWidth: "300px" }}
+                            // style={{ maxWidth: "300px" }}
                             typeName="time"
                             labelName="To"
                             value={toTime}
@@ -486,7 +487,7 @@ function ProductDetailPage() {
                             {/* Tooltip for Price */}
                             {showPriceTooltip && (
                                 <div className="pdp-tooltip">
-                                    Base Price is ₹100.
+                                    Base Price is ₹{baseAmt}.
                                     <br /><br />
                                     ₹{vehicleRate} will be added <br /> for every hour.
                                 </div>

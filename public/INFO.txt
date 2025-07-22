@@ -2,6 +2,5 @@
 
 -The site is now live
 
--2 css changes needed: (making changes:🙃)
---->product detail page : input box css issue (mobile device only)
---->signup page : css issue (mobile device only)
+
+--->product detail page : input box css issue (ios device only)

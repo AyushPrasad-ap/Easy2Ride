@@ -279,3 +279,23 @@
 .popup-active {
   top: 50%;
 }
+
+/* Small-phone layout: show each input on its own row */
+@media (max-width: 440px) {
+  /* 1. Make the grid a single column */
+  .pdp-inputs {
+    grid-template-columns: 1fr !important; /* one column only */
+    gap: 12px; /* keep some vertical space */
+  }
+
+  /* 2. Ensure every input container stretches across the row */
+  .pdp-inputs .input-box-container {
+    width: 100%; /* fill the grid cell */
+    --input-width: 100%; /* override any desktop variable */
+  }
+
+  /* 3. Make the actual <input> fill the container */
+  .pdp-inputs .custom-input-box input {
+    width: 100%;
+  }
+}

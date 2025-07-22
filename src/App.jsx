@@ -61,7 +61,9 @@ function App() {
 
 
 
-      {/* when deploying this project : remove scripts folder (serviceAccountKey.json file has sensitive info) */}
+      {/* when deploying this project : remove scripts folder (serviceAccountKey.json file has sensitive info) ---> DONE*/}
+      {/* on the netlify platform --> environment variables , i have added a variable (SECRETS_SCAN_ENABLED --> false) . this was done because somewhere in my code i have actually written the secret key instead of using process.env variable (all secrets are written in .env file). so instead of finding where i have written that secret, i turned off the setting in netlify by using that environment variable. (if you find the written secret in your codebase remove the actual written secret and use process .env variable instead of that and remove that SECRETS_SCAN_ENABLED variable from netlify)*/}
+
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/asp' element={<AreaSelectionPage />} />

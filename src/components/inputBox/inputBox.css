@@ -17,7 +17,7 @@
 
 .custom-input-box input {
   width: 100%;
-  min-width: 100px;
+  /* min-width: 100px; */
   height: 100%;
 
   letter-spacing: 1px;
