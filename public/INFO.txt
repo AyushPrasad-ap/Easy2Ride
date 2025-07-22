@@ -3,4 +3,4 @@
 -The site is now live
 
 
---->product detail page : input box css issue (ios device only)
+--->product detail page : input box css issue (ios device only (iphone and ipad (not mac)))

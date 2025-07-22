@@ -14,6 +14,10 @@ function LargeFooter() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
+    const gotoLinkedIn = () => {
+        window.open("https://www.linkedin.com/in/ayush-prasad-ap/", "_blank");
+    }
+
     return (
         <footer className="footer">
             <div className="uptop" onClick={scrollToTop}>
@@ -27,7 +31,7 @@ function LargeFooter() {
                         <p>Aditya</p>
                     </div>
                 </div>
-                <div className="quick-links">
+                <div className="quick-links" onClick={gotoLinkedIn} style={{ cursor: "pointer" }}>
                     <div className="links-column">
                         <p>Terms of Use</p>
                         <p>Privacy Policy</p>
@@ -41,17 +45,17 @@ function LargeFooter() {
                     </div>
                 </div>
                 <div className="social-handles">
-                    <a href="">
-                        <img src={twitterSymbol} alt="" />
+                    <a href="https://www.linkedin.com/in/ayush-prasad-ap/" target="_blank" rel="noopener noreferrer">
+                        <img src={twitterSymbol} alt="twitter" />
                     </a>
-                    <a href="">
-                        <img src={linkedinSymbol} alt="" />
+                    <a href="https://www.linkedin.com/in/ayush-prasad-ap/" target="_blank" rel="noopener noreferrer">
+                        <img src={linkedinSymbol} alt="linkedin" />
                     </a>
-                    <a href="">
-                        <img src={facebookSymbol} alt="" />
+                    <a href="https://www.linkedin.com/in/ayush-prasad-ap/" target="_blank" rel="noopener noreferrer">
+                        <img src={facebookSymbol} alt="facebook" />
                     </a>
-                    <a href="">
-                        <img src={instagramSymbol} alt="" />
+                    <a href="https://www.linkedin.com/in/ayush-prasad-ap/" target="_blank" rel="noopener noreferrer">
+                        <img src={instagramSymbol} alt="instagram" />
                     </a>
                 </div>
                 <div className="copyright-mark">©2025 E2R | ALL RIGHTS RESERVED</div>
