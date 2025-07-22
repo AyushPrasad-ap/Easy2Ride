@@ -154,12 +154,12 @@ Adjust URLs in src/pages/paymentPage.jsx if you deploy backend elsewhere.
 
 ## 🤝 Contributing
 
--🍴 Fork the repo
--📥 Clone your fork
--🔧 Create a feature branch (git checkout -b feat/XYZ)
--📝 Make your changes & commit (git commit -m "feat: ...")
--🔀 Push & open a PR
--✅ We’ll review & merge!
+1) 🍴 Fork the repo
+2) 📥 Clone your fork
+3) 🔧 Create a feature branch (git checkout -b feat/XYZ)
+4) 📝 Make your changes & commit (git commit -m "feat: ...")
+5) 🔀 Push & open a PR
+6) ✅ We’ll review & merge!
 
 Please abide by the existing code style and include tests where possible.
 
@@ -169,7 +169,7 @@ Please abide by the existing code style and include tests where possible.
 
 MIT License © Ayush Prasad
 
----
+--
 
 Built with ❤️ using React, Firebase, Razorpay, EmailJS & Netlify.
 
