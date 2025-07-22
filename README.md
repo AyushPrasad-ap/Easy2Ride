@@ -117,13 +117,13 @@ EMAILJS_PUBLIC_KEY=your_public_key
 ### Run Frontend
 
 npm run dev
-# visits http://localhost:5173
+visits http://localhost:5173
 
 ### Run Backend (Order & Verification)
 
 cd scripts
 node server.cjs
-# or if using Heroku deployment, skip local server
+or if using Heroku deployment, skip local server
 
 POST /api/create-order
 
