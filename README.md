@@ -60,6 +60,7 @@ Easy2Ride is a full-stack vehicle-rental web app built with React on the fronten
 
 ## 📁 Project Structure
 
+```
 easy2ride/
 ├─ public/ # Static assets (images, icons, html)
 ├─ src/
@@ -75,6 +76,7 @@ easy2ride/
 ├─ package.json
 ├─ README.md
 └─ vite.config.js
+```
 
 ---
 
